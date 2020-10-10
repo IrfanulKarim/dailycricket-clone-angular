@@ -20,8 +20,9 @@ export class ScoresService {
   constructor( private http: HttpClient) { }
 
   getScores(): Observable<Scores[]>{
-    return this.http.get<Scores[]>("https://rest.entitysport.com/v2/matches/?status=2&format=6&token=437214169d9be2a73e91d22f76f68b52&per_page=10&&paged=1");
+    return this.http.get<Scores[]>("https://rest.entitysport.com/v2/matches/?status=3&format=6&token=437214169d9be2a73e91d22f76f68b52&per_page=10&&paged=1");
   }
+  
 
 
 

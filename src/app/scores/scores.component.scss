@@ -6,3 +6,35 @@ img{
     width: 30px;
     height: 30px;
 }
+
+
+.font_orange{
+    color: #f47320;
+}
+
+.circle_orange{
+    left: -14px;
+    top: 5px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f47320;
+    z-index: -1;
+
+}
+
+.background_orange{
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    left: -10px;
+    top: -5px;
+    padding: 8px;
+    background-color: #f47320;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    border-radius: 8px;
+    z-index: 0;
+    font-size: 12px;
+}

@@ -4,60 +4,66 @@
   fxLayout.xs="column"
   fxLayoutGap="10px">
 
-  <div>
-    <div>
-      <h1>Live&Upcoming</h1>
-      <hr>
-    </div>
-  </div> 
 
-  <table mat-table [dataSource]="scores.response.items" class="mat-elevation-z8">
+  <table mat-table [dataSource]="scores.response.items" class="mat-elevation-z8" >
 
     <ng-container matColumnDef="status_str">
-      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <th mat-header-cell *matHeaderCellDef> Live&Upcoming</th>
       <tr>
-        <td mat-cell *matCellDef="let item"> 
-          {{item.status_str}} {{item.subtitle}} 
-        <tr>
-          {{item.venue.name}} 
+        <td mat-cell *matCellDef="let item " >
+          <span class="background_orange circle_orange">{{item.status_str }}</span>{{item.subtitle}} 
+        <tr class="font_orange ">
+          <span>{{item.venue.name}} </span>
         </tr>
-        <tr>
+        <tr class="font_orange">
           {{item.date_end |  date : "h:mm a 'Local Time ' "}} 
         </tr>
         </td>
       </tr>
-      
-
     </ng-container>
 
     <ng-container matColumnDef="TeamA">
-      <th mat-header-cell *matHeaderCellDef> Team A </th>
-      <td mat-cell *matCellDef="let item"> {{item.teama.name}} </td>
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <tr>
+        <td mat-cell *matCellDef="let item"> 
+          <h4>{{item.teama.name | uppercase}} </h4>
+          <tr>
+          <h4>{{item.teama.scores_full}}</h4>
+          </tr>
+        </td>
+      </tr>
     </ng-container>
 
     <ng-container matColumnDef="FlagA">
-      <th mat-header-cell *matHeaderCellDef> Flag A </th>
+      <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let item"> <img src="{{item.teama.logo_url}}" alt="{{item.teama.logo_url}}"> </td>
     </ng-container>
 
     <ng-container matColumnDef="vs">
-      <th mat-header-cell *matHeaderCellDef> VS </th>
-      <td mat-cell *matCellDef="let item"> <h1>VS</h1> </td>
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let item"> <h1 class="font_orange">VS</h1> </td>
     </ng-container>
 
     <ng-container matColumnDef="FlagB">
-      <th mat-header-cell *matHeaderCellDef> Flag B </th>
+      <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let item"> <img src="{{item.teamb.logo_url}}" alt="{{item.teamb.logo_url}}"> </td>
     </ng-container>
 
     <ng-container matColumnDef="TeamB">
-      <th mat-header-cell *matHeaderCellDef> Team B </th>
-      <td mat-cell *matCellDef="let item"> {{item.teamb.name}} </td>
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <tr>
+        <td mat-cell *matCellDef="let item"> 
+          <h4>{{item.teamb.name | uppercase}} </h4>
+          <tr>
+          <h4>{{item.teamb.scores_full}}</h4>
+          </tr>
+        </td>
+      </tr>
     </ng-container>
 
     <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let item"> {{item.date_end}} </td>
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let item" class="font_orange"> <h4>{{item.date_end | date :  "d MMM, yy"}} </h4> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
