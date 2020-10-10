@@ -4,12 +4,30 @@
   fxLayout.xs="column"
   fxLayoutGap="10px">
 
+  <div>
+    <div>
+      <h1>Live&Upcoming</h1>
+      <hr>
+    </div>
+  </div> 
 
   <table mat-table [dataSource]="scores.response.items" class="mat-elevation-z8">
 
-    <ng-container matColumnDef="status">
+    <ng-container matColumnDef="status_str">
       <th mat-header-cell *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let item"> {{item.status_str}} </td>
+      <tr>
+        <td mat-cell *matCellDef="let item"> 
+          {{item.status_str}} {{item.subtitle}} 
+        <tr>
+          {{item.venue.name}} 
+        </tr>
+        <tr>
+          {{item.date_end |  date : "h:mm a 'Local Time ' "}} 
+        </tr>
+        </td>
+      </tr>
+      
+
     </ng-container>
 
     <ng-container matColumnDef="TeamA">
@@ -20,6 +38,26 @@
     <ng-container matColumnDef="FlagA">
       <th mat-header-cell *matHeaderCellDef> Flag A </th>
       <td mat-cell *matCellDef="let item"> <img src="{{item.teama.logo_url}}" alt="{{item.teama.logo_url}}"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vs">
+      <th mat-header-cell *matHeaderCellDef> VS </th>
+      <td mat-cell *matCellDef="let item"> <h1>VS</h1> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FlagB">
+      <th mat-header-cell *matHeaderCellDef> Flag B </th>
+      <td mat-cell *matCellDef="let item"> <img src="{{item.teamb.logo_url}}" alt="{{item.teamb.logo_url}}"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TeamB">
+      <th mat-header-cell *matHeaderCellDef> Team B </th>
+      <td mat-cell *matCellDef="let item"> {{item.teamb.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let item"> {{item.date_end}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

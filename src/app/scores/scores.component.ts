@@ -19,13 +19,13 @@ export class ScoresComponent implements OnInit {
   dataSource: Scores[];
   scoreerrMess: string;
 
-  status: string;
+  status_str: string;
   TeamA: string;
   FlagA: string;
   vs: string;
   FlagB: string;
   TeamB: string;
-  date: string;
+  date: Date;
 
   constructor(private scoresService: ScoresService) { }
 
@@ -37,7 +37,7 @@ export class ScoresComponent implements OnInit {
 
   }
 
-  displayedColumns: string[] = ['status', 'TeamA', 'FlagA'];
+  displayedColumns: string[] = ['status_str', 'TeamA', 'FlagA', 'vs', 'FlagB', 'TeamB', 'date'];
   
 
 }
