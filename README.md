@@ -1,3 +1,5 @@
+![screencapture-localhost-4200-scores-2020-10-10-23_07_46](https://user-images.githubusercontent.com/43893163/95662210-1528fc80-0b57-11eb-9a33-a7177af8f2a0.png)
+
 # DailyCricket
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
