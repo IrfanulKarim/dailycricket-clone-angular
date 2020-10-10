@@ -1,8 +1,109 @@
 <div class="container"
-  fxlayout="column"
+  fxlayout="rows"
+  fxLayout.sm="column"
+  fxLayout.xs="column"
   fxLayoutGap="10px">
 
-  <h1>Live&Upcoming</h1>
+
+  <table mat-table [dataSource]="scores.response.items" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let item"> {{item.status_str}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TeamA">
+      <th mat-header-cell *matHeaderCellDef> Team A </th>
+      <td mat-cell *matCellDef="let item"> {{item.teama.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FlagA">
+      <th mat-header-cell *matHeaderCellDef> Flag A </th>
+      <td mat-cell *matCellDef="let item"> <img src="{{item.teama.logo_url}}" alt="{{item.teama.logo_url}}"> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div fxFlex>
+    <div>
+      <h1>Live&Upcoming</h1>
+      <hr>
+    </div>
+
+
+  </div> -->
+
+  <!-- <div>
+    <p>{{scores.etag}}</p>
+  </div> -->
+  
+
+  <!-- <div>
+    <mat-list>
+      <mat-list-item *ngFor="let score of scores">
+        <p>{{score.status}}</p>
+        <p>{{score.modified}}</p>
+        <p>{{score.datetime}}</p>
+        <p>{{scores.etag}}</p>
+        <p>{{scores.api_version}}</p>
+        <p>{{res.total_number}}</p>
+        <p>{{res.total_pages}}</p>
+        <p>{{score.response.mid}}</p>
+      </mat-list-item>
+    </mat-list>
+  </div> -->
+
+
+<!-- <div fxFlex *ngFor="let item of scores.response.items"> -->
+  <!-- <p>{{scores.response.match_id}}</p>
+  <p>{{scores.response.title}}</p>
+
+  <p>{{scores.response.competition.cid}}</p>
+
+  <p>{{scores.response.teama.team_id}}</p>
+  <p>{{scores.response.teamb.team_id}}</p>
+
+  <p>{{scores.response.venue.name}}</p>
+
+  <p>{{scores.response.toss.text}}</p>
+
+  <p>{{scores.datetime}}</p> -->
+
+  <!-- <p>{{item.status_str}}</p> -->
+  <!-- <p>{{scores.response.items.venue.name}}</p> -->
+<!-- </div> -->
+
+<!-- <div fxFlex *ngIf="scores" >
+  <mat-grid-list rows="7" >
+    <mat-grid-tile *ngFor="let items of scores.response.items">
+      <p>{{items.status_str}}</p>
+      <div *ngFor="let item of items | async">
+        <p>{{item.status_str}}</p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+  
 
   
+
+  
+
+
 </div>

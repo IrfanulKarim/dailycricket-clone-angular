@@ -1,6 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ScoresService } from '../services/scores.service';
-
+import { Scores } from '../shared/scores';
+import { Response } from '../shared/response';
+import { Items } from '../shared/items';
+import { Competition } from '../shared/competition';
+import { Team } from '../shared/team';
+import { Venue } from '../shared/venue';
+import { Toss } from '../shared/toss';
 
 @Component({
   selector: 'app-scores',
@@ -9,17 +15,29 @@ import { ScoresService } from '../services/scores.service';
 })
 export class ScoresComponent implements OnInit {
 
-  score: any;
+  scores: Scores[];
+  dataSource: Scores[];
+  scoreerrMess: string;
+
+  status: string;
+  TeamA: string;
+  FlagA: string;
+  vs: string;
+  FlagB: string;
+  TeamB: string;
+  date: string;
 
   constructor(private scoresService: ScoresService) { }
 
   ngOnInit() {
     this.scoresService.getScores()
-    .subscribe((score) => this.score = score);
-    console.log(this.score);
+    .subscribe((scores) => {this.scores = scores; this.dataSource = scores; },
+    errmess => this.scoreerrMess = <any>errmess);
 
-    
 
   }
+
+  displayedColumns: string[] = ['status', 'TeamA', 'FlagA'];
+  
 
 }
