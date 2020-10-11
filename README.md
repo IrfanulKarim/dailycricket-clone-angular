@@ -1,4 +1,27 @@
+**RESULT (Still need some modification)**
 ![screencapture-localhost-4200-scores-2020-10-10-23_07_46](https://user-images.githubusercontent.com/43893163/95662210-1528fc80-0b57-11eb-9a33-a7177af8f2a0.png)
+**Technology I used in this project**
+
+- Angular(6.*.*)
+- TypeScript
+- Angular Material
+- Angular FlexLayout
+- SASS
+- HttpClient
+- REST API and others.
+
+**How to run this project**
+
+1.  Open Git Bash or Terminal in Visual Studio Code
+2. Change the current working directory to the location where you want the cloned directory.
+3. Type git clone, and then paste the URL (Clone with HTTPS)
+     $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+4. Press Enter to create your local clone.
+
+**Run these command after cloning done**
+
+- npm install
+- ng serve
 
 # DailyCricket
 
