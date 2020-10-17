@@ -1,3 +1,12 @@
+### **Screenshot of my project, for better idea of my work.**
+**You can check on my behance profile also, https://www.behance.net/karimirfanul**
+
+![screencapture-localhost-4200-scores-2020-10-10-18_56_10](https://user-images.githubusercontent.com/43893163/96335040-1f875100-1097-11eb-809a-1a16e338d57e.png)
+
+
+
+
+
 **RESULT (Still need some modification)**
 ![screencapture-localhost-4200-scores-2020-10-10-23_07_46](https://user-images.githubusercontent.com/43893163/95662210-1528fc80-0b57-11eb-9a33-a7177af8f2a0.png)
 **Technology I used in this project**
